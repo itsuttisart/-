@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SchoolFlow - ระบบบริหารจัดการโรงเรียน</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section id="auth-view" class="card auth-card">
+        <h1>SchoolFlow</h1>
+        <p class="subtitle">ระบบบริหารจัดการโรงเรียนครบวงจร</p>
+
+        <form id="login-form" class="auth-form">
+          <h2>เข้าสู่ระบบ</h2>
+          <label>
+            ชื่อผู้ใช้
+            <input type="text" id="username" required />
+          </label>
+          <label>
+            รหัสผ่าน
+            <input type="password" id="password" required />
+          </label>
+          <button type="submit">ล็อกอิน</button>
+        </form>
+
+        <form id="pin-form" class="auth-form hidden">
+          <h2>กรอกรหัส PIN</h2>
+          <p id="pin-user"></p>
+          <label>
+            PIN 4-6 หลัก
+            <input type="password" id="pin" inputmode="numeric" minlength="4" maxlength="6" required />
+          </label>
+          <button type="submit">ยืนยัน PIN</button>
+          <button type="button" id="switch-account" class="secondary">ใช้บัญชีอื่น</button>
+        </form>
+      </section>
+
+      <section id="main-view" class="hidden">
+        <header class="topbar">
+          <div>
+            <h2>SchoolFlow Dashboard</h2>
+            <p id="welcome-text"></p>
+          </div>
+          <div class="top-actions">
+            <button id="sync-btn" class="secondary">ซิงก์ข้อมูล</button>
+            <button id="logout-btn">ออกจากระบบ</button>
+          </div>
+        </header>
+
+        <nav class="tabs" id="menu-tabs"></nav>
+
+        <main id="menu-content" class="card"></main>
+      </section>
+    </div>
+
+    <template id="table-template">
+      <table>
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
